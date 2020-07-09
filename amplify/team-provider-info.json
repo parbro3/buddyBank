@@ -1,0 +1,15 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-buddybank-dev-85801-authRole",
+            "UnauthRoleArn": "arn:aws:iam::267043144229:role/amplify-buddybank-dev-85801-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::267043144229:role/amplify-buddybank-dev-85801-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-buddybank-dev-85801-deployment",
+            "UnauthRoleName": "amplify-buddybank-dev-85801-unauthRole",
+            "StackName": "amplify-buddybank-dev-85801",
+            "StackId": "arn:aws:cloudformation:us-east-1:267043144229:stack/amplify-buddybank-dev-85801/97bcb850-c1f4-11ea-a544-12e727a79a85",
+            "AmplifyAppId": "d6ythete3xy1f"
+        }
+    }
+}
