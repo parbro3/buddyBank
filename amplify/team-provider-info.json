@@ -10,6 +10,11 @@
             "StackName": "amplify-buddybank-dev-85801",
             "StackId": "arn:aws:cloudformation:us-east-1:267043144229:stack/amplify-buddybank-dev-85801/97bcb850-c1f4-11ea-a544-12e727a79a85",
             "AmplifyAppId": "d6ythete3xy1f"
+        },
+        "categories": {
+            "auth": {
+                "cognito392505c2": {}
+            }
         }
     }
 }

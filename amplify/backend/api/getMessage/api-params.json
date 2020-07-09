@@ -1,0 +1,38 @@
+{
+    "paths": [
+        {
+            "name": "/message/withdraw",
+            "lambdaFunction": "buddyBankWithdrawMessage",
+            "privacy": {
+                "private": true,
+                "auth": [
+                    "/GET",
+                    "/DELETE"
+                ]
+            }
+        }
+    ],
+    "resourceName": "buddybankapi",
+    "apiName": "buddybankapi",
+    "functionArns": [
+        {
+            "lambdaFunction": "buddyBankWithdrawMessage"
+        }
+    ],
+    "privacy": {
+        "auth": 1,
+        "unauth": 0,
+        "authRoleName": "amplify-buddybank-dev-85801-authRole",
+        "unAuthRoleName": "amplify-buddybank-dev-85801-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "buddyBankWithdrawMessage",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}
