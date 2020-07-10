@@ -1,0 +1,20 @@
+{
+    "develop": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-buddybank-develop-182541-authRole",
+            "UnauthRoleArn": "arn:aws:iam::267043144229:role/amplify-buddybank-develop-182541-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::267043144229:role/amplify-buddybank-develop-182541-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-buddybank-develop-182541-deployment",
+            "UnauthRoleName": "amplify-buddybank-develop-182541-unauthRole",
+            "StackName": "amplify-buddybank-develop-182541",
+            "StackId": "arn:aws:cloudformation:us-east-1:267043144229:stack/amplify-buddybank-develop-182541/e5c87b20-c243-11ea-9d72-0ecdc090d557",
+            "AmplifyAppId": "dj77cq3pypuj"
+        },
+        "categories": {
+            "auth": {
+                "cognito7500f4f5": {}
+            }
+        }
+    }
+}

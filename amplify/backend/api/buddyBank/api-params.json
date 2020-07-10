@@ -1,0 +1,81 @@
+{
+    "paths": [
+        {
+            "name": "/message/withdraw",
+            "lambdaFunction": "buddyBankWithdrawMessage",
+            "privacy": {
+                "private": true,
+                "auth": [
+                    "/GET",
+                    "/DELETE"
+                ]
+            }
+        },
+        {
+            "name": "/message/deposit",
+            "lambdaFunction": "buddyBankDepositMessage",
+            "privacy": {
+                "private": true,
+                "auth": [
+                    "/POST"
+                ]
+            }
+        },
+        {
+            "name": "/message/count",
+            "lambdaFunction": "buddyBankCountMessages",
+            "privacy": {
+                "private": true,
+                "auth": [
+                    "/GET"
+                ]
+            }
+        }
+    ],
+    "resourceName": "buddyBank",
+    "apiName": "buddyBank",
+    "functionArns": [
+        {
+            "lambdaFunction": "buddyBankWithdrawMessage"
+        },
+        {
+            "lambdaFunction": "buddyBankDepositMessage"
+        },
+        {
+            "lambdaFunction": "buddyBankCountMessages"
+        }
+    ],
+    "privacy": {
+        "auth": 3,
+        "unauth": 0,
+        "authRoleName": "amplify-buddybank-develop-182541-authRole",
+        "unAuthRoleName": "amplify-buddybank-develop-182541-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "buddyBankWithdrawMessage",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        },
+        {
+            "category": "function",
+            "resourceName": "buddyBankDepositMessage",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        },
+        {
+            "category": "function",
+            "resourceName": "buddyBankCountMessages",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ],
+    "uuid": "961f1ddf"
+}
