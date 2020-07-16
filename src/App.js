@@ -10,35 +10,31 @@ import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
 //Add amplify stuff... import and apply config
 import Amplify, { API, Auth } from 'aws-amplify';
 import awsconfig from './aws-exports';
+import Button from '@material-ui/core/Button';
 Amplify.configure(awsconfig);
 
 function App() {
 
   const [responseState, setResponseState] = useState("no response yet");
 
-  var testVar = 'qwerqwer'
-
   const callBack = (response) => {
-
-    console.log('here is the response' + JSON.stringify(response))
     setResponseState(response.message)
-
+  }
+  const error = (error) => {
+    setResponseState(error.message)
   }
 
-  /*
-  const handler = (newValue) => {
-    setResponseState({
-      someVar: newValue
-    })
+  const handleClick = () => {
+    //Wow. I legit can't believe this worked. Go me.
+    MessageApi({'endpoint':'/message/withdraw', 'cb':callBack,'error':error})
   }
-  */
 
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          <code>{responseState}</code>
         </p>
         <a
           className="App-link"
@@ -48,12 +44,18 @@ function App() {
         >
           Learn React
         </a>
+
+        <Button variant="contained" color="primary" onClick={() => handleClick()}>
+          GetMessage
+        </Button>
+
       </header>
 
-      <MessageApi cb={callBack}/>
+      {/* This is cool that this automatically gets called and populates the state variable */}
+      {/* <MessageApi endpoint='/message/withdraw' cb={callBack} error={error}/> */}
 
       <div>
-        And here is the changed variable {responseState}
+        
       </div>
 
 
