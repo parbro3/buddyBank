@@ -1,13 +1,29 @@
-import React from 'react';
+import React, {useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
+//import DepositCount from './components/DepositCount.js';
+import MessageApi from './api/MessageApi.js';
 
-import Amplify, { API } from 'aws-amplify';
+//add amplify ui components
+import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
+
+//Add amplify stuff... import and apply config
+import Amplify, { API, Auth } from 'aws-amplify';
 import awsconfig from './aws-exports';
-
 Amplify.configure(awsconfig);
 
 function App() {
+
+  const [responseState, setResponseState] = useState("no response yet");
+
+  var testVar = 'qwerqwer'
+
+  const handler = (newValue) => {
+    setResponseState({
+      someVar: newValue
+    })
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -24,8 +40,17 @@ function App() {
           Learn React
         </a>
       </header>
+
+      <MessageApi handlerFunction={handler}/>
+
+      <div>
+        And here is the changed variable {responseState}
+      </div>
+
+
+      <AmplifySignOut/>
     </div>
   );
 }
 
-export default App;
+export default withAuthenticator(App);
