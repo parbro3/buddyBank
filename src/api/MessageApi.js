@@ -4,6 +4,15 @@
 import React, {useState} from 'react';
 import { API } from 'aws-amplify';
 
+
+
+export default function DepositMessage(props) {  
+    return apiRequest('buddyBank','/message/withdraw',{}, props.cb, props.error);
+}
+
+
+
+
 /*
 export default getMessageCount = () => {
     console.log('getMessageCount called');
@@ -27,7 +36,8 @@ export class MessageApi extends React.Component {
 }
 */
 
-class DepositMessage extends React.Component) {
+/*
+class DepositMessage extends React.Component {
 
     constructor(props) {
         super(props)
@@ -35,6 +45,7 @@ class DepositMessage extends React.Component) {
     }
 
 
+    
     console.log('depositMessage called');
 
     const cb = (response) => {
@@ -52,8 +63,12 @@ class DepositMessage extends React.Component) {
         console.log(error);
         return(null)
     }
-    return apiRequest('buddyBank','/message/withdraw',{}, cb, error);
+    
+
+    return apiRequest('buddyBank','/message/withdraw',{}, props.cb, props.error);
+
 }
+*/
 
 
 //TODO: add the response and error functions into the params of the request

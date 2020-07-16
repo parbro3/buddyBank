@@ -18,11 +18,20 @@ function App() {
 
   var testVar = 'qwerqwer'
 
+  const callBack = (response) => {
+
+    console.log('here is the response' + JSON.stringify(response))
+    setResponseState(response.message)
+
+  }
+
+  /*
   const handler = (newValue) => {
     setResponseState({
       someVar: newValue
     })
   }
+  */
 
   return (
     <div className="App">
@@ -41,7 +50,7 @@ function App() {
         </a>
       </header>
 
-      <MessageApi handlerFunction={handler}/>
+      <MessageApi cb={callBack}/>
 
       <div>
         And here is the changed variable {responseState}
