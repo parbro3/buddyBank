@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 //import DepositCount from './components/DepositCount.js';
 import MessageApi from './api/MessageApi.js';
+import DepositMessage from './components/DepositMessage.js'
 
 //add amplify ui components
 import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
@@ -26,7 +27,7 @@ function App() {
 
   const handleClick = () => {
     //Wow. I legit can't believe this worked. Go me.
-    MessageApi({'endpoint':'/message/withdraw', 'cb':callBack,'error':error})
+    MessageApi({'endpoint':'/message/withdraw', 'init':{}, 'cb':callBack,'error':error})
   }
 
   return (
@@ -39,10 +40,14 @@ function App() {
       {/* <MessageApi endpoint='/message/withdraw' cb={callBack} error={error}/> */}
 
       <div>
+
+        <DepositMessage caption='Type out something you think would be nice for someone to hear!' />
+
+
+
         <p>
           <code>{responseState}</code>
         </p>
-
         <Button variant="contained" color="primary" onClick={() => handleClick()}>
           GetMessage
         </Button>

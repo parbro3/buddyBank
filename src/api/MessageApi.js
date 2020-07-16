@@ -13,12 +13,18 @@ const handleClick = () => {
 */
 
 export default function MessageApi(props) {
-    return apiRequest('buddyBank',props.endpoint,{}, props.cb, props.error);
+    return apiRequest('buddyBank',props.endpoint,props.init, props.cb, props.error);
 }
 
-//TODO: add the response and error functions into the params of the request
 const apiRequest = (apiName, path, init, cb, error) => {
-    console.log('apiRequest called')
-    API.get(apiName, path, init).then(cb).catch(error);
+    console.log('here is the path: ' )
+    console.log(path)
+    switch(path){
+        case '/message/deposit':
+            API.post(apiName, path, init).then(cb).catch(error);
+            break;
+        default:
+            API.get(apiName, path, init).then(cb).catch(error);
+    }
     return(null)
 }
