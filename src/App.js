@@ -33,32 +33,21 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          <code>{responseState}</code>
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-
-        <Button variant="contained" color="primary" onClick={() => handleClick()}>
-          GetMessage
-        </Button>
-
       </header>
 
       {/* This is cool that this automatically gets called and populates the state variable */}
       {/* <MessageApi endpoint='/message/withdraw' cb={callBack} error={error}/> */}
 
       <div>
-        
+        <p>
+          <code>{responseState}</code>
+        </p>
+
+        <Button variant="contained" color="primary" onClick={() => handleClick()}>
+          GetMessage
+        </Button>
       </div>
-
-
+      
       <AmplifySignOut/>
     </div>
   );

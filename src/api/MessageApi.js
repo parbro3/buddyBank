@@ -1,8 +1,17 @@
 import { API } from 'aws-amplify';
 
-//this is automatically being called.
-//Can I do it with a button too?
-//Maybe have an auto option and a button option?
+/*
+
+Call automatically.. pass in the state variable in the defined callback
+<MessageApi endpoint='/message/withdraw' cb={callBack} error={error}/>
+
+Or call on button click
+const handleClick = () => {
+    MessageApi({'endpoint':'/message/withdraw', 'cb':callBack,'error':error})
+}
+
+*/
+
 export default function MessageApi(props) {
     return apiRequest('buddyBank',props.endpoint,{}, props.cb, props.error);
 }
