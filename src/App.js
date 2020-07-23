@@ -4,6 +4,7 @@ import './App.css';
 //import DepositCount from './components/DepositCount.js';
 import MessageApi from './api/MessageApi.js';
 import DepositMessage from './components/DepositMessage.js'
+import CountMessages from './components/CountMessages.js'
 
 //add amplify ui components
 import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
@@ -43,7 +44,7 @@ function App() {
 
         <DepositMessage caption='Type out something you think would be nice for someone to hear!' />
 
-
+        <CountMessages />
 
         <p>
           <code>{responseState}</code>
