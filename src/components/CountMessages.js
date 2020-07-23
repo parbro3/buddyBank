@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import MessageApi from '../api/MessageApi.js';
 
 import Paper from '@material-ui/core/Paper';
@@ -27,7 +27,6 @@ const useStyles = makeStyles((theme) => ({
 export default function CountMessages(props) {
 
     const [responseState, setResponseState] = useState("no response yet");
-
     const cb = (response) => {
         setResponseState(response.messageCount);
     }
@@ -35,13 +34,16 @@ export default function CountMessages(props) {
         setResponseState(error.message);
     }
 
+    useEffect(() => {
+        MessageApi({'endpoint':'/message/count', 'cb':cb,'error':error})
+    });
 
+    
     //this one should be automatic.. not a button click.
     const classes = useStyles();
     return(
         <div className={classes.root}>
             Bank Messages: {responseState}
-            <MessageApi endpoint='/message/count' cb={cb} error={error}/>
         </div>
     )
 
