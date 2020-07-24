@@ -5,6 +5,7 @@ import './App.css';
 import MessageApi from './api/MessageApi.js';
 import DepositMessage from './components/DepositMessage.js'
 import CountMessages from './components/CountMessages.js'
+import Header from './Header.js'
 
 //add amplify ui components
 import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
@@ -34,7 +35,11 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        {/*<img src={logo} className="App-logo" alt="logo" /> */}
+        
+
+
+        {/* <Header /> */}
       </header>
 
       {/* This is cool that this automatically gets called and populates the state variable */}
